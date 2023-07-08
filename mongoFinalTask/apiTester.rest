@@ -1,0 +1,76 @@
+GET http://localhost:8080/products/64a989216b142a2dbba32660
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMSwiZXhwIjoxNjg4ODMzMjIxfQ.0d20f5YUA0891Wc4U-P2PLWUw-M95pFnM3pgwxVS1RY
+###
+GET http://localhost:8080/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMSwiZXhwIjoxNjg4ODMzMjIxfQ.0d20f5YUA0891Wc4U-P2PLWUw-M95pFnM3pgwxVS1RY
+###
+POST http://localhost:8080/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY4ODgzMjUyMSwiaWF0IjoxNjg4ODMyMjIxfQ.QcQL_5gY9znwzFLj0yV_iUJGYtSWl1R72VpAZ8vis6s
+Content-Type: application/json
+
+{
+  "title": "Product 5",
+  "price": 23,
+  "description": "A description",
+  "categoryId": 1,
+  "images": ["https://placeimg.com/640/480/any"]
+}
+###
+PUT http://localhost:8080/products/64a9892a6b142a2dbba3266
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMSwiZXhwIjoxNjg4ODMzMDE0fQ.4V4Bulee2biQx52-VALF4IJ0sEKEtolSaftO4XlYCik
+Content-Type: application/json
+
+{
+  "price":50
+}
+###
+DELETE  http://localhost:8080/products/64a988f66b142a2dbba3265a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMSwiZXhwIjoxNjg4ODMzOTE3fQ.3kkTRIsV8EzfJMFlyxJWYd-HOPLjbR2yQ5jzauwpYR8
+########################################################
+
+### Orders APIS
+POST http://localhost:8080/placeOrder
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMSwiZXhwIjoxNjg4ODM5MDU5fQ._bq_lvsCHPmABaDNMhX64AD2VQWG4OQAVL88EhhIrfo
+Content-Type: application/json
+
+[
+  {
+    "productId":"64a989216b142a2dbba32660",
+    "title":"Product 4",
+    "price":18,
+    "amount":1
+  },
+  {
+    "productId":"64a9892a6b142a2dbba32662",
+    "title":"Product 5",
+    "price":50,
+    "amount":2
+  }
+]
+########################################################
+
+### Authentication APIS
+POST http://localhost:8080/createAccount
+Content-Type: application/json
+
+{
+  "name":"fouad",
+  "lastName":"Abdelhady",
+  "userName":"yfouad42@yahoo.com",
+  "password":"12345F$a",
+  "role":"customer"
+}
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "userName":"fouad_abdelhady@gmail.com",
+  "password":"12345F$a"
+}
+###
+GET http://localhost:8080/freshToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgzMjIyMX0.QRNlulLbP4oCvhHwxcMHnfhFzYTs9Qp5Ci68mw95GS0
+###
+GET http://localhost:8080/signOut
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTkzZmM1OTY5N2ViZTBjOGE2YzM5NSIsInVzZXJOYW1lIjoiZm91YWRfYWJkZWxoYWR5QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4ODgxNzUyOCwiZXhwIjoxNjg4ODE5NDUzfQ.QGIAT1ysCLY-hA7kVKfZP-2cLfk0o5EcNlbKH8jBY9A
